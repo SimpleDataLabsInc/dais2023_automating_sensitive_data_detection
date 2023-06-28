@@ -33,7 +33,7 @@ The following configuration variables are required to set up for the demo projec
 
 ## Setting up Databricks Secrets Configurations
 To install databricks-cli and register secrets on MacOS:
-```
+```bash
 brew install conda
 conda create -n test_env
 pip install databricks-cli
