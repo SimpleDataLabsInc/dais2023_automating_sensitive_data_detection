@@ -91,3 +91,7 @@ Fixing Drop Column from `SchemaTransform` Gem
 *** Release notes for version: 19 ***
 
 Updating
+
+*** Release notes for version: 1.0 ***
+
+Initial Release

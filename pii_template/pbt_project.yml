@@ -1,6 +1,6 @@
 name: HealthVerity_Demo
 description: ''
-version: '19'
+version: '1.0'
 author: nathan@prophecy.io
 language: python
 buildSystem: ''
