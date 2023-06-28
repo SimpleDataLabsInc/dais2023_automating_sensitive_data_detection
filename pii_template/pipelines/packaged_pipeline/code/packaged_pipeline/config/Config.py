@@ -1,7 +1,7 @@
 from packaged_pipeline.graph.decompress_decrypt.config.Config import SubgraphConfig as decompress_decrypt_Config
 from packaged_pipeline.graph.check_k_anonmity.config.Config import SubgraphConfig as check_k_anonmity_Config
-from packaged_pipeline.graph.mask_test_result_comments_augmented.config.Config import (
-    SubgraphConfig as mask_test_result_comments_augmented_Config
+from packaged_pipeline.graph.mask_test_result_comments.config.Config import (
+    SubgraphConfig as mask_test_result_comments_Config
 )
 from packaged_pipeline.graph.copy_tables.config.Config import SubgraphConfig as copy_tables_Config
 from prophecy.config import ConfigBase
@@ -11,7 +11,7 @@ class Config(ConfigBase):
 
     def __init__(
             self,
-            mask_test_result_comments_augmented: dict=None,
+            mask_test_result_comments: dict=None,
             check_k_anonmity: dict=None,
             encryptionKey: str=None,
             databricks_token: str=None,
@@ -23,7 +23,7 @@ class Config(ConfigBase):
     ):
         self.spark = None
         self.update(
-            mask_test_result_comments_augmented, 
+            mask_test_result_comments, 
             check_k_anonmity, 
             encryptionKey, 
             databricks_token, 
@@ -35,7 +35,7 @@ class Config(ConfigBase):
 
     def update(
             self,
-            mask_test_result_comments_augmented: dict={},
+            mask_test_result_comments: dict={},
             check_k_anonmity: dict={},
             encryptionKey: str="nadeesh:encryption_key",
             databricks_token: str="nadeesh:databricks_token",
@@ -46,11 +46,11 @@ class Config(ConfigBase):
             **kwargs
     ):
         prophecy_spark = self.spark
-        self.mask_test_result_comments_augmented = self.get_config_object(
+        self.mask_test_result_comments = self.get_config_object(
             prophecy_spark, 
-            mask_test_result_comments_augmented_Config(prophecy_spark = prophecy_spark), 
-            mask_test_result_comments_augmented, 
-            mask_test_result_comments_augmented_Config
+            mask_test_result_comments_Config(prophecy_spark = prophecy_spark), 
+            mask_test_result_comments, 
+            mask_test_result_comments_Config
         )
         self.check_k_anonmity = self.get_config_object(
             prophecy_spark, 

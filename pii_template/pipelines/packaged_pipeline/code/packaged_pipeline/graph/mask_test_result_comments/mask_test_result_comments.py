@@ -7,7 +7,7 @@ from prophecy.transpiler.fixed_file_schema import *
 from . import *
 from .config import *
 
-def mask_test_result_comments_augmented(spark: SparkSession, config: SubgraphConfig, in0: DataFrame) -> DataFrame:
+def mask_test_result_comments(spark: SparkSession, config: SubgraphConfig, in0: DataFrame) -> DataFrame:
     Config.update(config)
     df_Projection_For_Masking = Projection_For_Masking(spark, in0)
     df_Get_Model_Output = Get_Model_Output(spark, df_Projection_For_Masking)

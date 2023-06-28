@@ -16,12 +16,12 @@ def pipeline(spark: SparkSession) -> None:
         Config.check_k_anonmity, 
         df_decompress_decrypt
     )
-    df_mask_test_result_comments_augmented = mask_test_result_comments_augmented(
+    df_mask_test_result_comments = mask_test_result_comments(
         spark, 
-        Config.mask_test_result_comments_augmented, 
+        Config.mask_test_result_comments, 
         df_check_k_anonmity_out0
     )
-    masked_demo_data(spark, df_mask_test_result_comments_augmented)
+    masked_demo_data(spark, df_mask_test_result_comments)
     quarantined_demo_data(spark, df_check_k_anonmity_orElse0)
     copy_tables(spark, Config.copy_tables)
 

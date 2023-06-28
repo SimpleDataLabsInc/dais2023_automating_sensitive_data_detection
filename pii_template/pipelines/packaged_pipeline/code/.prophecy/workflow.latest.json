@@ -19,7 +19,7 @@
       "common" : {
         "type" : "record",
         "fields" : [ {
-          "name" : "mask_test_result_comments_augmented",
+          "name" : "mask_test_result_comments",
           "kind" : {
             "type" : "record",
             "fields" : [ {
@@ -1258,8 +1258,8 @@
       "id" : "m-pOxrLbSwRJU-HgNKBAy$$RPocii_bHSWk1mBCsocS5",
       "component" : "Subgraph",
       "metadata" : {
-        "label" : "mask_test_result_comments_augmented",
-        "slug" : "mask_test_result_comments_augmented",
+        "label" : "mask_test_result_comments",
+        "slug" : "mask_test_result_comments",
         "x" : 720,
         "y" : 200,
         "phase" : 0,
