@@ -1,0 +1,16 @@
+{
+  "mask_test_result_comments_augmented" : {
+    "input_column" : "test_result_comments"
+  },
+  "mask_character" : "^^",
+  "check_k_anonmity" : {
+    "limit_records_for_model_inference" : 200
+  },
+  "copy_tables" : {
+    "source_catalog" : "clean_room",
+    "source_schema" : "demo_data",
+    "tables" : [ "masked_demo_data_base", "quartantined_demo_data_base" ],
+    "target_catalog" : "clean_room",
+    "target_schema" : "hv"
+  }
+}

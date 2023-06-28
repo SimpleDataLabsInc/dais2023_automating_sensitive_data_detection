@@ -1,0 +1,1051 @@
+{
+  "id" : "m-pOxrLbSwRJU-HgNKBAy",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "input_column",
+          "kind" : {
+            "type" : "string",
+            "value" : "input"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "filter_entity",
+          "kind" : {
+            "type" : "spark_expression",
+            "value" : "True"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "id_field",
+          "kind" : {
+            "type" : "string",
+            "value" : "record_id"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "8G0D3n7XlutUxnLfYC0l4",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "_iEH0Hq03kKiUxFcYsgMV",
+      "slug" : "out0",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "mask_pii"
+  },
+  "connections" : [ {
+    "id" : "y0FNSPam1yj4nsR-zCGkm",
+    "source" : "c8_73Ey9SIV2dFBJzTFzH",
+    "sourcePort" : "2ZI_P5d-IDp4gu4nsRPhs",
+    "target" : "XTLBxbueBsLb_wEJ_TFYI",
+    "targetPort" : "23qYFh52B1M2A-LHD_PKp"
+  }, {
+    "id" : "2bKuvczWSNTnd5PPH4HAF",
+    "source" : "XTLBxbueBsLb_wEJ_TFYI",
+    "sourcePort" : "LFc4PPA2kBwbQOh-oM-sM",
+    "target" : "fgeXdcAAshI9iq2-WBd4r",
+    "targetPort" : "PwG0gP0Mp98EE-eZGe-uc"
+  }, {
+    "id" : "rgMjHr4wqE4uyTB3IDE3N",
+    "source" : "m-pOxrLbSwRJU-HgNKBAy",
+    "sourcePort" : "8G0D3n7XlutUxnLfYC0l4",
+    "target" : "AH0aub_X9xtjSIRbBLz0d",
+    "targetPort" : "jlr53hy39DXM2NH2hHxFM"
+  }, {
+    "id" : "aPSb_nZF_YBbp1BCCgQZM",
+    "source" : "m-pOxrLbSwRJU-HgNKBAy",
+    "sourcePort" : "8G0D3n7XlutUxnLfYC0l4",
+    "target" : "_-AuLsZ0hxUAvwKCwBCx1",
+    "targetPort" : "UAvYwl1wA50hqpxtdQHKF"
+  }, {
+    "id" : "TuBKdxPySG74kvWmdEC4b",
+    "source" : "_-AuLsZ0hxUAvwKCwBCx1",
+    "sourcePort" : "7LAchg_lurEgBmkGsINdX",
+    "target" : "HdaNpBn4e2VZosakTvRaZ",
+    "targetPort" : "Hu_AjyIBtz_XzLOMMZuVY"
+  }, {
+    "id" : "1UOlnAihgMqtYl7I-Q62x",
+    "source" : "fgeXdcAAshI9iq2-WBd4r",
+    "sourcePort" : "HKenjISsdgZaNCKMpRvuD",
+    "target" : "kLiSLIru2qVVOAeqjBFjC",
+    "targetPort" : "z47GpD8ZwrV9nqCSbqAUS"
+  }, {
+    "id" : "immBSFnz0AL7GfG0EAH4d",
+    "source" : "kLiSLIru2qVVOAeqjBFjC",
+    "sourcePort" : "L3I__m8S-iRxKTJmjAlnA",
+    "target" : "m-pOxrLbSwRJU-HgNKBAy",
+    "targetPort" : "_iEH0Hq03kKiUxFcYsgMV"
+  }, {
+    "id" : "vC6btgd-yF62o0AWmLIa5",
+    "source" : "p9HBRDW9guYPIJU_GaveJ",
+    "sourcePort" : "omdx_fHPKvd6iLQ__iPI2",
+    "target" : "c8_73Ey9SIV2dFBJzTFzH",
+    "targetPort" : "OL1LiXlrfvu-SyhHxS5Rc"
+  }, {
+    "id" : "oX5ulT1d7AtRiX2Lh92Px",
+    "source" : "HdaNpBn4e2VZosakTvRaZ",
+    "sourcePort" : "sD-K-hleqzQcWOXqzAsH9",
+    "target" : "nRGa6toeZNFaEzXxrMcM5",
+    "targetPort" : "Tt8Bt8EOZ5JVgf1AKhhmF"
+  }, {
+    "id" : "StaAtNrzvt4V1G-UfXueE",
+    "source" : "nRGa6toeZNFaEzXxrMcM5",
+    "sourcePort" : "7vsw9eYMzEc5O4-Kjaz2W",
+    "target" : "p9HBRDW9guYPIJU_GaveJ",
+    "targetPort" : "_FVxHEb0jrZlUcQJF_3bz"
+  }, {
+    "id" : "2n5t6za0VLOhzTYFVN84k",
+    "source" : "AH0aub_X9xtjSIRbBLz0d",
+    "sourcePort" : "TQkmKLGeoLPxm-ALdPudy",
+    "target" : "kLiSLIru2qVVOAeqjBFjC",
+    "targetPort" : "EzcygIBp3mAr9JilH9VT9"
+  } ],
+  "processes" : {
+    "p9HBRDW9guYPIJU_GaveJ" : {
+      "id" : "p9HBRDW9guYPIJU_GaveJ",
+      "component" : "Filter",
+      "metadata" : {
+        "label" : "Filter_By_Entity_Type",
+        "slug" : "Filter_By_Entity_Type",
+        "x" : 720,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "_FVxHEb0jrZlUcQJF_3bz",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "omdx_fHPKvd6iLQ__iPI2",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "columnsSelector" : [ "_FVxHEb0jrZlUcQJF_3bz$$8HUFJ6Jb6Xg3Fxrrh1iYy##output_data-entity" ],
+        "condition" : {
+          "format" : "sql",
+          "expression" : "`output_data-entity` IN ('HCW', 'PATIENT')"
+        }
+      }
+    },
+    "_-AuLsZ0hxUAvwKCwBCx1" : {
+      "id" : "_-AuLsZ0hxUAvwKCwBCx1",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Projection_For_Masking",
+        "slug" : "Projection_For_Masking",
+        "x" : 120,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "UAvYwl1wA50hqpxtdQHKF",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "7LAchg_lurEgBmkGsINdX",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "expr('$id_field')"
+          },
+          "description" : "",
+          "_row_id" : "1268733345"
+        }, {
+          "target" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "expr('$input_column')"
+          },
+          "description" : "",
+          "_row_id" : "906392473"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ ]
+      }
+    },
+    "HdaNpBn4e2VZosakTvRaZ" : {
+      "id" : "HdaNpBn4e2VZosakTvRaZ",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Get_Model_Output",
+        "slug" : "Get_Model_Output",
+        "x" : 320,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Hu_AjyIBtz_XzLOMMZuVY",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "sD-K-hleqzQcWOXqzAsH9",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id"
+          },
+          "description" : "",
+          "_row_id" : "243845554"
+        }, {
+          "target" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "input_data"
+          },
+          "description" : "",
+          "_row_id" : "898071872"
+        }, {
+          "target" : "output_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "get_model_response_single_with_schema(input_data)"
+          },
+          "description" : "",
+          "_row_id" : "495233177"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "Hu_AjyIBtz_XzLOMMZuVY$$psr4X9Uzhz2hSshhExRcn##projected_record_id", "Hu_AjyIBtz_XzLOMMZuVY$$psr4X9Uzhz2hSshhExRcn##input_data" ]
+      }
+    },
+    "nRGa6toeZNFaEzXxrMcM5" : {
+      "id" : "nRGa6toeZNFaEzXxrMcM5",
+      "component" : "FlattenSchema",
+      "metadata" : {
+        "label" : "FlattenSchema_1",
+        "slug" : "FlattenSchema_1",
+        "x" : 520,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Tt8Bt8EOZ5JVgf1AKhhmF",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "7vsw9eYMzEc5O4-Kjaz2W",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "explodedColsNewName" : [ {
+          "originalColToExplode" : "output_data",
+          "updatedColToExplode" : "output_data",
+          "colNameAfterExplode" : "output_data"
+        } ],
+        "fsExpressions" : [ {
+          "exploded" : "",
+          "flattenedExpression" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "input_data"
+          },
+          "targetTokens" : [ "input_data" ],
+          "target" : "input_data"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "output_data.entity",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "output_data.entity"
+          },
+          "targetTokens" : [ "output_data", "entity" ],
+          "target" : "output_data-entity"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "output_data.score",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "output_data.score"
+          },
+          "targetTokens" : [ "output_data", "score" ],
+          "target" : "output_data-score"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "output_data.word",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "output_data.word"
+          },
+          "targetTokens" : [ "output_data", "word" ],
+          "target" : "output_data-word"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "output_data.start",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "output_data.start"
+          },
+          "targetTokens" : [ "output_data", "start" ],
+          "target" : "output_data-start"
+        }, {
+          "exploded" : "✓",
+          "flattenedExpression" : "output_data.end",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "output_data.end"
+          },
+          "targetTokens" : [ "output_data", "end" ],
+          "target" : "output_data-end"
+        }, {
+          "exploded" : "",
+          "flattenedExpression" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id"
+          },
+          "targetTokens" : [ "projected_record_id" ],
+          "target" : "projected_record_id"
+        } ],
+        "columnsSelector" : [ "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data.end", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##projected_record_id", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data.entity", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data.word", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##input_data", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data.start", "Tt8Bt8EOZ5JVgf1AKhhmF$$3WV4r2xWVHtsPXnZ7FsuY##output_data.score" ],
+        "explodeColumns" : [ ],
+        "delimiter" : "-"
+      }
+    },
+    "c8_73Ey9SIV2dFBJzTFzH" : {
+      "id" : "c8_73Ey9SIV2dFBJzTFzH",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Collecting_Start_End_Indices",
+        "slug" : "Collecting_Start_End_Indices",
+        "x" : 920,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "OL1LiXlrfvu-SyhHxS5Rc",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "2ZI_P5d-IDp4gu4nsRPhs",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "input_data"
+          },
+          "description" : "",
+          "_row_id" : "218298729"
+        }, {
+          "target" : "`output_data-entity`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`output_data-entity`"
+          },
+          "description" : "",
+          "_row_id" : "499380545"
+        }, {
+          "target" : "`output_data-score`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`output_data-score`"
+          },
+          "description" : "",
+          "_row_id" : "2135652828"
+        }, {
+          "target" : "`output_data-word`",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "`output_data-word`"
+          },
+          "description" : "",
+          "_row_id" : "483976974"
+        }, {
+          "target" : "output-index-tuple",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "array(`output_data-start`, `output_data-end` )"
+          },
+          "description" : "",
+          "_row_id" : "2082483754"
+        }, {
+          "target" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id"
+          },
+          "description" : "",
+          "_row_id" : "5723961222138664362"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##input_data", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##output_data-entity", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##output_data-word", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##output_data-end", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##output_data-start", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##output_data-score", "OL1LiXlrfvu-SyhHxS5Rc$$37Dx-dnADctrz3uDmnEcb##projected_record_id" ]
+      }
+    },
+    "kLiSLIru2qVVOAeqjBFjC" : {
+      "id" : "kLiSLIru2qVVOAeqjBFjC",
+      "component" : "Join",
+      "metadata" : {
+        "label" : "Join_1",
+        "slug" : "Join_1",
+        "x" : 1560,
+        "y" : 240,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "z47GpD8ZwrV9nqCSbqAUS",
+          "slug" : "in0"
+        }, {
+          "id" : "EzcygIBp3mAr9JilH9VT9",
+          "slug" : "in1"
+        } ],
+        "outputs" : [ {
+          "id" : "L3I__m8S-iRxKTJmjAlnA",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "conditions" : [ {
+          "alias" : "in1",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id==expr('$id_field')"
+          },
+          "joinType" : "inner"
+        } ],
+        "expressions" : [ {
+          "target" : "${id_field}",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.projected_record_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "record_created_dt",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.record_created_dt"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "claim_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.claim_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_gender",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_gender"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_age"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_year_of_birth",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_year_of_birth"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_zip3",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_zip3"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "patient_state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.patient_state"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "date_service",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.date_service"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "date_specimen",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.date_specimen"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "diagnosis_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.diagnosis_code"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "diagnosis_description",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.diagnosis_description"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "procedure_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.procedure_code"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "loinc_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.loinc_code"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "loinc_component",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.loinc_component"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_ordered_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_ordered_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_result_value",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_result_value"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_result_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_result_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "date_report",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.date_report"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "time_report",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.time_report"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "lab_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.lab_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "lab_test_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.lab_test_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "lab_test_number",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.lab_test_number"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_battery_local_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_battery_local_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_battery_std_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_battery_std_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_battery_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_battery_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_ordered_local_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_ordered_local_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "test_ordered_std_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.test_ordered_std_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "result_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.result_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "result_unit_of_measure",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.result_unit_of_measure"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ref_range",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ref_range"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "abnormal_flag",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.abnormal_flag"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "fasting_status",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.fasting_status"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "lab_npi",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.lab_npi"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "payer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.payer_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "payer_id_qual",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.payer_id_qual"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "payer_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.payer_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_provider_npi",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_provider_npi"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_name"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_market_type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_market_type"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_specialty",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_specialty"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_state"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "ordering_zip",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in1.ordering_zip"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "masked_${input_column}",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "in0.output_data"
+          },
+          "description" : "",
+          "_row_id" : "c_268"
+        } ],
+        "hints" : [ {
+          "id" : "z47GpD8ZwrV9nqCSbqAUS$$8NHB0cpbJfzgdpIU2NoSp",
+          "alias" : "in0",
+          "hintType" : "none",
+          "propagateColumns" : false
+        }, {
+          "id" : "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ",
+          "alias" : "in1",
+          "hintType" : "none",
+          "propagateColumns" : false
+        } ],
+        "allIn1" : null,
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "z47GpD8ZwrV9nqCSbqAUS$$8NHB0cpbJfzgdpIU2NoSp##projected_record_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##time_report", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##payer_id_qual", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##payer_name", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##record_created_dt", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_battery_std_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##diagnosis_code", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##claim_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_ordered_std_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_state", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##fasting_status", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##loinc_code", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##diagnosis_description", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_battery_name", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_result_name", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_state", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##result_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_zip", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##date_specimen", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_provider_npi", "z47GpD8ZwrV9nqCSbqAUS$$8NHB0cpbJfzgdpIU2NoSp##projected_record_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##lab_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_battery_local_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_market_type", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##date_service", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##lab_test_number", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_zip3", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_ordered_local_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##date_report", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_age", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##payer_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_name", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_result_value", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##abnormal_flag", "z47GpD8ZwrV9nqCSbqAUS$$8NHB0cpbJfzgdpIU2NoSp##output_data", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##test_ordered_name", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##lab_npi", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ref_range", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##ordering_specialty", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##lab_test_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##result_unit_of_measure", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##procedure_code", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##loinc_component", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_id", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_year_of_birth", "EzcygIBp3mAr9JilH9VT9$$KXApf0h5kAAp9ld513OTQ##patient_gender" ],
+        "allIn0" : null,
+        "whereClause" : null,
+        "headAlias" : "in0"
+      }
+    },
+    "XTLBxbueBsLb_wEJ_TFYI" : {
+      "id" : "XTLBxbueBsLb_wEJ_TFYI",
+      "component" : "Aggregate",
+      "metadata" : {
+        "label" : "Group_By_Record",
+        "slug" : "Group_By_Record",
+        "x" : 1080,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "23qYFh52B1M2A-LHD_PKp",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "LFc4PPA2kBwbQOh-oM-sM",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "allIns" : false,
+        "doPivot" : false,
+        "aggregate" : [ {
+          "target" : "output_index_list",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "collect_list ( `output-index-tuple`)"
+          },
+          "description" : "",
+          "_row_id" : "c_81"
+        } ],
+        "allowSelection" : true,
+        "pivotColumn" : null,
+        "pivotValues" : [ ],
+        "activeTab" : "groupBy",
+        "columnsSelector" : [ "23qYFh52B1M2A-LHD_PKp$$7PI8AstSmbFLN7t8A37m0##projected_record_id", "23qYFh52B1M2A-LHD_PKp$$7PI8AstSmbFLN7t8A37m0##input_data", "23qYFh52B1M2A-LHD_PKp$$7PI8AstSmbFLN7t8A37m0##output-index-tuple" ],
+        "groupBy" : [ {
+          "target" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "input_data"
+          },
+          "description" : "",
+          "_row_id" : null
+        }, {
+          "target" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id"
+          },
+          "description" : "",
+          "_row_id" : null
+        } ]
+      }
+    },
+    "AH0aub_X9xtjSIRbBLz0d" : {
+      "id" : "AH0aub_X9xtjSIRbBLz0d",
+      "component" : "SchemaTransform",
+      "metadata" : {
+        "label" : "SchemaTransform_1",
+        "slug" : "SchemaTransform_1",
+        "x" : 980,
+        "y" : 120,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "jlr53hy39DXM2NH2hHxFM",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "TQkmKLGeoLPxm-ALdPudy",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "sql",
+        "importString" : "",
+        "transformations" : [ {
+          "MissingColumn" : {
+            "sourceColumn" : "",
+            "defaultValue" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          },
+          "DropColumn" : {
+            "sourceColumn" : "'$input_column'"
+          },
+          "kind" : "DropColumn",
+          "RenameColumn" : {
+            "sourceColumn" : "",
+            "targetColumn" : ""
+          },
+          "AddReplaceColumn" : {
+            "sourceColumn" : "",
+            "expression" : {
+              "expression" : "",
+              "format" : "python"
+            }
+          }
+        } ],
+        "activeTab" : "transformations",
+        "columnsSelector" : [ ]
+      }
+    },
+    "fgeXdcAAshI9iq2-WBd4r" : {
+      "id" : "fgeXdcAAshI9iq2-WBd4r",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Masking_With_Star",
+        "slug" : "Masking_With_Star",
+        "x" : 1260,
+        "y" : 320,
+        "phase" : 1,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "PwG0gP0Mp98EE-eZGe-uc",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "HKenjISsdgZaNCKMpRvuD",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "${$.workflow.metainfo.frontEndLanguage}",
+        "expressions" : [ {
+          "target" : "input_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "input_data"
+          },
+          "description" : "",
+          "_row_id" : "643800467"
+        }, {
+          "target" : "output_data",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "mask_output_data(input_data, output_index_list)"
+          },
+          "description" : "",
+          "_row_id" : "1963859763"
+        }, {
+          "target" : "projected_record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "projected_record_id"
+          },
+          "description" : "",
+          "_row_id" : "7821413576636164385"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "PwG0gP0Mp98EE-eZGe-uc$$c0zZvtkAlY-GRc0QvU8ER##output_index_list", "PwG0gP0Mp98EE-eZGe-uc$$c0zZvtkAlY-GRc0QvU8ER##projected_record_id", "PwG0gP0Mp98EE-eZGe-uc$$c0zZvtkAlY-GRc0QvU8ER##input_data" ]
+      }
+    }
+  },
+  "externalDependencies" : [ {
+    "type" : "pypi",
+    "id" : "hD3RT",
+    "name" : "cryptography",
+    "enabled" : true,
+    "package" : "cryptography"
+  } ]
+}

@@ -1,0 +1,900 @@
+{
+  "id" : "xRtI-XUd7hAeifHBiBbtR",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 0,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "encryptionKey",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "nadeesh:encryption_key"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : true
+        }, {
+          "name" : "databricks_token",
+          "kind" : {
+            "type" : "databricks_secret",
+            "value" : "nadeesh:databricks_token"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : true
+        } ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ {
+      "id" : "fAXuVMVaSlsjzl-84vuV_",
+      "slug" : "in0",
+      "isStreaming" : false
+    } ],
+    "outputs" : [ {
+      "id" : "sKc6CDE3JCosptCBcVgxZ",
+      "slug" : "out",
+      "isStreaming" : false
+    } ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "decompress_decrypt"
+  },
+  "connections" : [ {
+    "id" : "lETWa7ntaPrgg-jQLGscR",
+    "source" : "SaPGYMg10hvjQJAHyLsKy",
+    "sourcePort" : "AxYWS0zPfzxdbTDr3g9p2",
+    "target" : "dKkH0wW9-hnoxPZoNet0d",
+    "targetPort" : "HZgPjYx5USIp6ezHwSjDk"
+  }, {
+    "id" : "H2g8Sl2Z9EvkL1jj32_tP",
+    "source" : "dKkH0wW9-hnoxPZoNet0d",
+    "sourcePort" : "KBD1daLvI5yS0zpONyME8",
+    "target" : "xRtI-XUd7hAeifHBiBbtR",
+    "targetPort" : "sKc6CDE3JCosptCBcVgxZ"
+  }, {
+    "id" : "hF1KmX1cIUaBBDAAPl5xj",
+    "source" : "xRtI-XUd7hAeifHBiBbtR",
+    "sourcePort" : "fAXuVMVaSlsjzl-84vuV_",
+    "target" : "SaPGYMg10hvjQJAHyLsKy",
+    "targetPort" : "khEyPbX9sJexGYy7k68pL"
+  } ],
+  "processes" : {
+    "dKkH0wW9-hnoxPZoNet0d" : {
+      "id" : "dKkH0wW9-hnoxPZoNet0d",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "preprocess",
+        "slug" : "preprocess",
+        "x" : 520,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "HZgPjYx5USIp6ezHwSjDk",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "KBD1daLvI5yS0zpONyME8",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false
+      },
+      "properties" : {
+        "importLanguage" : "python",
+        "expressions" : [ {
+          "target" : "record_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "record_id"
+          },
+          "description" : "",
+          "_row_id" : "625624356"
+        }, {
+          "target" : "record_created_dt",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "record_created_dt"
+          },
+          "description" : "",
+          "_row_id" : "2025443976"
+        }, {
+          "target" : "claim_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "claim_id"
+          },
+          "description" : "",
+          "_row_id" : "1313279657"
+        }, {
+          "target" : "patient_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_id"
+          },
+          "description" : "",
+          "_row_id" : "509765258"
+        }, {
+          "target" : "patient_gender",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_gender"
+          },
+          "description" : "",
+          "_row_id" : "1122690882"
+        }, {
+          "target" : "patient_age",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_age"
+          },
+          "description" : "",
+          "_row_id" : "258845133"
+        }, {
+          "target" : "patient_year_of_birth",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_year_of_birth"
+          },
+          "description" : "",
+          "_row_id" : "302190644"
+        }, {
+          "target" : "patient_zip3",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_zip3"
+          },
+          "description" : "",
+          "_row_id" : "401762848"
+        }, {
+          "target" : "patient_state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "patient_state"
+          },
+          "description" : "",
+          "_row_id" : "615131737"
+        }, {
+          "target" : "date_service",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "date_service"
+          },
+          "description" : "",
+          "_row_id" : "53829200"
+        }, {
+          "target" : "date_specimen",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "date_specimen"
+          },
+          "description" : "",
+          "_row_id" : "1661800769"
+        }, {
+          "target" : "diagnosis_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "diagnosis_code"
+          },
+          "description" : "",
+          "_row_id" : "1212631421"
+        }, {
+          "target" : "procedure_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "procedure_code"
+          },
+          "description" : "",
+          "_row_id" : "1337115565"
+        }, {
+          "target" : "loinc_code",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "loinc_code"
+          },
+          "description" : "",
+          "_row_id" : "419999791"
+        }, {
+          "target" : "test_ordered_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_ordered_name"
+          },
+          "description" : "",
+          "_row_id" : "1813336494"
+        }, {
+          "target" : "test_result_value",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_result_value"
+          },
+          "description" : "",
+          "_row_id" : "431702290"
+        }, {
+          "target" : "test_result_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_result_name"
+          },
+          "description" : "",
+          "_row_id" : "1310317560"
+        }, {
+          "target" : "date_report",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "date_report"
+          },
+          "description" : "",
+          "_row_id" : "1681974463"
+        }, {
+          "target" : "time_report",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "time_report"
+          },
+          "description" : "",
+          "_row_id" : "1948931487"
+        }, {
+          "target" : "lab_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lab_id"
+          },
+          "description" : "",
+          "_row_id" : "564128768"
+        }, {
+          "target" : "lab_test_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lab_test_id"
+          },
+          "description" : "",
+          "_row_id" : "736837015"
+        }, {
+          "target" : "lab_test_number",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lab_test_number"
+          },
+          "description" : "",
+          "_row_id" : "1323606364"
+        }, {
+          "target" : "test_battery_local_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_battery_local_id"
+          },
+          "description" : "",
+          "_row_id" : "1314434621"
+        }, {
+          "target" : "test_battery_std_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_battery_std_id"
+          },
+          "description" : "",
+          "_row_id" : "543673000"
+        }, {
+          "target" : "test_battery_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_battery_name"
+          },
+          "description" : "",
+          "_row_id" : "2054663957"
+        }, {
+          "target" : "test_ordered_local_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_ordered_local_id"
+          },
+          "description" : "",
+          "_row_id" : "778233811"
+        }, {
+          "target" : "test_ordered_std_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "test_ordered_std_id"
+          },
+          "description" : "",
+          "_row_id" : "860326929"
+        }, {
+          "target" : "result_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "result_id"
+          },
+          "description" : "",
+          "_row_id" : "2040582087"
+        }, {
+          "target" : "result_unit_of_measure",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "result_unit_of_measure"
+          },
+          "description" : "",
+          "_row_id" : "340601031"
+        }, {
+          "target" : "ref_range",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ref_range"
+          },
+          "description" : "",
+          "_row_id" : "1775054938"
+        }, {
+          "target" : "abnormal_flag",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "abnormal_flag"
+          },
+          "description" : "",
+          "_row_id" : "983053006"
+        }, {
+          "target" : "fasting_status",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "fasting_status"
+          },
+          "description" : "",
+          "_row_id" : "65450974"
+        }, {
+          "target" : "lab_npi",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "lab_npi"
+          },
+          "description" : "",
+          "_row_id" : "1247144687"
+        }, {
+          "target" : "payer_id",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "payer_id"
+          },
+          "description" : "",
+          "_row_id" : "991976284"
+        }, {
+          "target" : "payer_id_qual",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "payer_id_qual"
+          },
+          "description" : "",
+          "_row_id" : "2138934870"
+        }, {
+          "target" : "payer_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "payer_name"
+          },
+          "description" : "",
+          "_row_id" : "2105280158"
+        }, {
+          "target" : "ordering_provider_npi",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_provider_npi"
+          },
+          "description" : "",
+          "_row_id" : "286605813"
+        }, {
+          "target" : "ordering_name",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_name"
+          },
+          "description" : "",
+          "_row_id" : "770372252"
+        }, {
+          "target" : "ordering_market_type",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_market_type"
+          },
+          "description" : "",
+          "_row_id" : "1047004784"
+        }, {
+          "target" : "ordering_specialty",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_specialty"
+          },
+          "description" : "",
+          "_row_id" : "1594191666"
+        }, {
+          "target" : "ordering_state",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_state"
+          },
+          "description" : "",
+          "_row_id" : "361703140"
+        }, {
+          "target" : "ordering_zip",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "ordering_zip"
+          },
+          "description" : "",
+          "_row_id" : "68048125"
+        }, {
+          "target" : "test_result_comments",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "replace(test_result_comments, '~^~', ' ')"
+          },
+          "description" : "",
+          "_row_id" : "2117132926"
+        }, {
+          "target" : "testing_comments",
+          "expression" : {
+            "format" : "sql",
+            "expression" : "testing_comments"
+          },
+          "description" : "",
+          "_row_id" : "913833151331083829"
+        } ],
+        "importString" : "",
+        "activeTab" : "expressions",
+        "columnsSelector" : [ "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##testing_comments", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_specialty", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_gender", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_provider_npi", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_battery_std_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_state", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##date_service", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##date_report", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##procedure_code", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_battery_local_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##lab_test_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_result_comments", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_result_name", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_market_type", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_ordered_std_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##lab_npi", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##record_created_dt", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##diagnosis_code", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_battery_name", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##payer_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_zip3", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_state", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_name", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##claim_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ordering_zip", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_age", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##time_report", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_ordered_local_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##ref_range", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##loinc_code", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##payer_name", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##fasting_status", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##abnormal_flag", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##result_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##lab_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##result_unit_of_measure", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##patient_year_of_birth", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##payer_id_qual", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##lab_test_number", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##record_id", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##date_specimen", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_ordered_name", "HZgPjYx5USIp6ezHwSjDk$$5hnWR4QxKd3Pazkz4a1iz##test_result_value" ]
+      }
+    },
+    "SaPGYMg10hvjQJAHyLsKy" : {
+      "id" : "SaPGYMg10hvjQJAHyLsKy",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "decryption",
+        "slug" : "decryption",
+        "x" : 100,
+        "y" : 120,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "khEyPbX9sJexGYy7k68pL",
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "AxYWS0zPfzxdbTDr3g9p2",
+          "slug" : "out0",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "record_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "record_created_dt",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "claim_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_gender",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_age",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_year_of_birth",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_zip3",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "patient_state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_service",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_specimen",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "diagnosis_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "procedure_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "loinc_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_ordered_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_result_value",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_result_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "testing_comments",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "date_report",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "time_report",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lab_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lab_test_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lab_test_number",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_battery_local_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_battery_std_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_battery_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_ordered_local_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_ordered_std_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "result_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "result_unit_of_measure",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ref_range",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "abnormal_flag",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "fasting_status",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "lab_npi",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payer_id",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payer_id_qual",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "payer_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_provider_npi",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_name",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_market_type",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_specialty",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_state",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "ordering_zip",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "test_result_comments",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "from cryptography.fernet import Fernet\nimport numpy as np\nimport pandas as pd\nimport base64\n\ndef base64_encode(value: str) -> str:\n    encoded = base64.urlsafe_b64encode(str.encode(value))\n    result = encoded.rstrip(b\"=\")\n    return result.decode()\n\ndef base64_decode(value: str) -> str:\n    padding = 4 - (len(value) % 4)\n    value = value + (\"=\" * padding)\n    result = base64.urlsafe_b64decode(value)\n    return result.decode()\n\nencryptionKeyFinal = base64_decode(base64_encode(Config.encryptionKey))\n\n\n\nfor column in in0.columns:\n    in0 = in0.withColumn(column, decrypt(col(column).cast(\"string\"), lit(encryptionKeyFinal)))\n\nout0 = in0\n\n",
+        "scriptMethodHeader" : "def Script(spark: SparkSession, in0: DataFrame) -> DataFrame:",
+        "scriptMethodFooter" : "    return out0"
+      }
+    }
+  },
+  "externalDependencies" : [ {
+    "type" : "pypi",
+    "id" : "hD3RT",
+    "name" : "cryptography",
+    "enabled" : false,
+    "package" : "cryptography"
+  } ]
+}

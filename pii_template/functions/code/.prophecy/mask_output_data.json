@@ -1,0 +1,1 @@
+{"initCode":"","code":"@udf(returnType = StringType())\ndef mask_output_data(input_string, output_indexes_to_mask):\n    output_string = input_string\n    for index_tuple in output_indexes_to_mask:\n        output_string = output_string[:index_tuple[0]] + (Config.mask_character*(index_tuple[1]-index_tuple[0]) ) + output_string[index_tuple[1]:]\n    return output_string"}

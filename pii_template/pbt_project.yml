@@ -1,0 +1,218 @@
+name: HealthVerity_Demo
+description: ''
+version: '19'
+author: nathan@prophecy.io
+language: python
+buildSystem: ''
+buildSystemDetails:
+  artefactID: healthverity_demo
+  parentArtefactID: healthverity_demo
+  buildSystem: wheel
+  author: null
+  createdAt: '2023-05-11 23:00:27'
+pipelines:
+  pipelines/Aggregate_Data_Pipeline:
+    name: Aggregate_Data_Pipeline
+    description: ''
+    author: nadeesh@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-06-21 14:04:29'
+    datasets:
+      inputs:
+      - datasets/enriched_demo_data
+      outputs:
+      - datasets/patients_per_zip_state_diag
+    subgraphs: []
+    dependencies: {}
+  pipelines/packaged_pipeline:
+    name: packaged_pipeline
+    description: ''
+    author: nadeesh@prophecy.io
+    mode: batch
+    artefactID: ''
+    language: python
+    createdAt: '2023-06-22 04:58:09'
+    datasets:
+      inputs:
+      - datasets/new_clean_encrypted_ds
+      - datasets/patients_per_zip_state_diag
+      - datasets/ref_Ionic
+      - datasets/ref_diagnosis_with_is_rare
+      outputs:
+      - datasets/masked_demo_data
+      - datasets/quartantined_demo_data
+    subgraphs:
+    - subgraphs/copy_tables
+    - subgraphs/Mask_Data_Column_PDeId
+    - subgraphs/Select_Data_to_Mask
+    - subgraphs/Decrypted_Data_Source
+    dependencies: {}
+datasets:
+  datasets/ref_Ionic:
+    name: ref_Ionic
+    description: ''
+    author: nathan@prophecy.io
+    createdAt: '2023-06-02 17:27:24'
+    mode: batch
+    physicalDatasets:
+      HealthVerity-Prophecy:
+        fabricId: 2343
+        datasetType: File
+        description: ''
+        author: nathan@prophecy.io
+        createdAt: '2023-06-02 17:27:24'
+  datasets/quartantined_demo_data:
+    name: quartantined_demo_data
+    description: ''
+    author: nadeesh@prophecy.io
+    createdAt: '2023-06-21 09:51:22'
+    mode: batch
+    physicalDatasets:
+      HealthVerityFabricNadeesh:
+        fabricId: 2672
+        datasetType: Database
+        description: ''
+        author: nadeesh@prophecy.io
+        createdAt: '2023-06-21 09:51:22'
+  datasets/masked_demo_data:
+    name: masked_demo_data
+    description: ''
+    author: nadeesh@prophecy.io
+    createdAt: '2023-06-21 11:05:06'
+    mode: batch
+    physicalDatasets:
+      HealthVerityFabricNadeesh:
+        fabricId: 2672
+        datasetType: Database
+        description: ''
+        author: nadeesh@prophecy.io
+        createdAt: '2023-06-21 11:05:06'
+  datasets/patients_per_zip_state_diag:
+    name: patients_per_zip_state_diag
+    description: ''
+    author: nadeesh@prophecy.io
+    createdAt: '2023-06-21 14:02:51'
+    mode: batch
+    physicalDatasets:
+      HealthVerityFabricNadeesh:
+        fabricId: 2672
+        datasetType: Database
+        description: ''
+        author: nadeesh@prophecy.io
+        createdAt: '2023-06-21 14:02:51'
+  datasets/new_clean_encrypted_ds:
+    name: new_clean_encrypted_ds
+    description: ''
+    author: nadeesh@prophecy.io
+    createdAt: '2023-06-26 14:07:43'
+    mode: batch
+    physicalDatasets:
+      HealthVerityFabricNadeesh:
+        fabricId: 2672
+        datasetType: Database
+        description: ''
+        author: nadeesh@prophecy.io
+        createdAt: '2023-06-26 14:07:43'
+  datasets/ref_diagnosis_with_is_rare:
+    name: ref_diagnosis_with_is_rare
+    description: ''
+    author: nadeesh@prophecy.io
+    createdAt: '2023-06-26 14:45:55'
+    mode: batch
+    physicalDatasets:
+      HealthVerityFabricNadeesh:
+        fabricId: 2672
+        datasetType: Database
+        description: ''
+        author: nadeesh@prophecy.io
+        createdAt: '2023-06-26 14:45:55'
+templates: {}
+jobs: {}
+functions:
+  author: null
+  createdAt: '2023-05-11 23:00:27'
+  gems: {}
+  udfs:
+    udfs/decrypt:
+      name: decrypt
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nadeesh@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+    udfs/encrypt:
+      name: encrypt
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nadeesh@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+    udfs/get_model_response_single_with_schema:
+      name: get_model_response_single_with_schema
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nadeesh@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+    udfs/mask_output_data:
+      name: mask_output_data
+      description: ''
+      tags: []
+      inputs: []
+      outputs: []
+      author: nadeesh@prophecy.io
+      createdAt: '2022-12-15 18:04:50'
+  udafs: {}
+  expressions: {}
+subgraphs:
+  subgraphs/Mask_Data_Column_PDeId:
+    name: mask_pii
+    description: ''
+    author: nadeesh@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-06-21 10:30:46'
+  subgraphs/Select_Data_to_Mask:
+    name: check_k_anonymity
+    description: ''
+    author: nadeesh@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-06-22 05:12:24'
+  subgraphs/Decrypted_Data_Source:
+    name: decompress_decrypt
+    description: ''
+    author: nadeesh@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-06-22 05:28:05'
+  subgraphs/copy_tables:
+    name: copy_tables
+    description: copy one or more tables from one catalog and schema to another
+    author: pouya+healthverity@prophecy.io
+    language: python
+    artefactID: ''
+    mode: batch
+    createdAt: '2023-06-27 08:01:42'
+sqlModels: {}
+sqlMacros: {}
+sqlSeeds: {}
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline: null
+dependencies:
+- type: pypi
+  id: hD3RT
+  name: cryptography
+  enabled: false
+  package: cryptography
+projectDependencies: {}
+pipelineConfigurations: {}

@@ -1,0 +1,113 @@
+{
+  "id" : "eLhnCbHHewQ4lEMHaGPAu",
+  "component" : "Subgraph",
+  "metadata" : {
+    "label" : "",
+    "slug" : "",
+    "x" : 0,
+    "y" : 0,
+    "phase" : 2,
+    "cache" : false,
+    "detailedStats" : false,
+    "isImported" : false,
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ {
+          "name" : "source_catalog",
+          "kind" : {
+            "type" : "string",
+            "value" : "clean_room"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "source_schema",
+          "kind" : {
+            "type" : "string",
+            "value" : "demo_data"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "tables",
+          "kind" : {
+            "type" : "array",
+            "elementType" : {
+              "type" : "string",
+              "value" : null
+            },
+            "value" : [ "masked_demo_data" ]
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "target_catalog",
+          "kind" : {
+            "type" : "string",
+            "value" : "clean_room"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        }, {
+          "name" : "target_schema",
+          "kind" : {
+            "type" : "string",
+            "value" : "hv"
+          },
+          "optional" : false,
+          "isWorkflowNodeConfiguration" : false,
+          "isReferenced" : false
+        } ]
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false
+  },
+  "properties" : {
+    "packageName" : "copy_tables"
+  },
+  "connections" : [ ],
+  "processes" : {
+    "dVvkT4CxBlOGl-fZlO4XQ" : {
+      "id" : "dVvkT4CxBlOGl-fZlO4XQ",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "copy_script",
+        "slug" : "copy_script",
+        "x" : 120,
+        "y" : 120,
+        "phase" : 2,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : true
+      },
+      "properties" : {
+        "script" : "\nsource_catalog = Config.source_catalog\nsource_schema = Config.source_schema\ntarget_catalog = Config.target_catalog\ntarget_schema = Config.target_schema\n\nfor table in Config.tables:\n    writer = spark.sql(f\"\"\"select * from {source_catalog}.{source_schema}.{table}\"\"\").write\n    if spark.catalog.tableExists(f\"{target_catalog}.{target_schema}.{table}\"):\n        writer = writer.mode('append')\n    writer.saveAsTable(f\"{target_catalog}.{target_schema}.{table}\")",
+        "scriptMethodHeader" : "def Script(spark: SparkSession) -> None:",
+        "scriptMethodFooter" : "    return "
+      }
+    }
+  },
+  "externalDependencies" : [ {
+    "type" : "pypi",
+    "id" : "hD3RT",
+    "name" : "cryptography",
+    "enabled" : false,
+    "package" : "cryptography"
+  } ]
+}
