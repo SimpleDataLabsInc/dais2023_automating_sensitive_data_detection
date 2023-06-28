@@ -1,12 +1,14 @@
-# DAIS2023: Automating Sensitive Data Detection and Masking
-This repo is related to a talk given by Pouya from Prophecy, at the Data and AI Summit, 2023. More details on the talk itself can be found [here](https://www.databricks.com/dataaisummit/session/automating-sensitive-data-piiphi-detection/)
+# DAIS2023: [Automating Sensitive Data (PII/PHI) Detection](https://www.databricks.com/dataaisummit/session/automating-sensitive-data-piiphi-detection/)
+This repo is related to a talk given by [Pouya](https://www.linkedin.com/in/pouya-data/) from [Prophecy](https://www.prophecy.io/) at the 2023 Data and AI Summit in San Franscisco. 
+
 ## Introduction
 This Project Repository Houses 2 Prophecy Projects:
 - pii_template : The base template where we do all the heavy lifting:
   - Decryption of Encrypted Data
   - Checking K Anonymity
   - Masking PII data
-- pii_demo : The (non technical) customer facing Project which inherits code from the template and allows a user to create an end to end pipeline to mask PII Data.
+  - Copying tables to another location
+- pii_demo : The (non technical) customer facing Project which inherits code from the template and allows a user to create an end to end pipeline.
 
 ## Configuration Setup
 As prerequisite, for above code to run correctly, the user needs to set up Databricks Secrets. More on Databricks Secrets [here](https://docs.databricks.com/security/secrets/index.html)
