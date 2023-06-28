@@ -1,97 +1,126 @@
-# healthverity_demo
+# Healthverity Demo Template
 
-# Mac requirements
-1. brew install --cask anaconda
+The above project assumes that the model is already being hosted on Databricks ML Flow. Below is a guide for the same:
 
-*** Release notes for version: 1.0 ***
+## Hosting a Prebuilt Model via Databricks ML Flow Serving
 
-Initial
+In the below guide, we are using the stanford-deid model to perform Data Masking on our Pipelines
 
-*** Release notes for version: 2 ***
+### Register a Model
 
-Releasing new version of Decrypt Data Gem
+Open up a Databricks Notebook in your Databricks Workspace and first install the necessary libraries:
 
-*** Release notes for version: 3 ***
+```python
+%pip install transformers
+%pip install mlflow
+%pip install inputimeout
+%pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+```
 
-Packaging Cleaned References as a Subgraph
+Next, create the model and write it to the filesystem:
 
-*** Release notes for version: 4 ***
-
-Changing Decrypt Subgraph
-
-*** Release notes for version: 5.1 ***
-
-Fixing ID field as config
-
-*** Release notes for version: 5.2 ***
-
-Fixing Join Columns
-
-*** Release notes for version: 6 ***
-
-Changing phase 
+```python
+from transformers import AutoTokenizer, AutoModelForTokenClassification
+from transformers import pipeline
 
 
-*** Release notes for version: 6.1 ***
+m_name = 'StanfordAIMI/stanford-deidentifier-base'
+tokenizer = AutoTokenizer.from_pretrained(m_name)
+model = AutoModelForTokenClassification.from_pretrained(m_name)
+nlp = pipeline("ner", model=model, tokenizer=tokenizer)
 
-updated datset schema
+pipeline_output_dir = "./pipeline"
+nlp.save_pretrained(pipeline_output_dir)
+```
 
-*** Release notes for version: 8 ***
+Assuming you have Databricks MLFlow enabled on your workspace, you can now register a model Run once you have defined the model signature by providing defining: 
 
-FIXING Merge issues
+```python
+import mlflow
 
-*** Release notes for version: 9 ***
+class PIIAnalysisPipelineModel(mlflow.pyfunc.PythonModel):
+  def load_context(self, context):
+    import torch
+    m_name = 'StanfordAIMI/stanford-deidentifier-base'
+    tokenizer = AutoTokenizer.from_pretrained(m_name)
+    model = AutoModelForTokenClassification.from_pretrained(m_name)
+    device = 0 if torch.cuda.is_available() else -1
+    self.pipeline = pipeline("ner", model=model, tokenizer=tokenizer, device=device)
+    
+  def predict(self, context, texts: List[str]) -> List[dict]:
+    pipe = self.pipeline(texts, batch_size=len(texts))
+    return pipe
+```
+Next, you can register a model run with
 
-Updated naming convention for subgraphs
+```python
+with mlflow.start_run() as run:
+  mlflow.pyfunc.log_model(artifact_path="<ARTIFACT_PATH>", python_model=PIIAnalysisPipelineModel())
+```
 
-*** Release notes for version: 10 ***
+### Register a Model with a Version
 
-Fixing Decrypt UDF and Gem name collision
+After this step, you can view the runs from the Databricks ML UI. 
+From here, you can go and check the last Model Run from the `Experiments` screen:
+<img width="1719" alt="Screenshot 2023-06-28 at 1 25 43 PM" src="https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/assets/9202014/83f2d813-b026-436e-a430-8a63bddb6976">
 
-*** Release notes for version: 10.1 ***
+On clicking on the pyfunc in the Models column, we are directed to the Databricks MLFlow UI →This will give metrics etc. (If they were registered from the notebook):
 
-Test UDF Fix
+<img width="1710" alt="Screenshot 2023-06-27 at 6 27 43 PM" src="https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/assets/9202014/0ad1fd5f-4e68-4b23-9a65-3c6e56853c64">
 
-*** Release notes for version: 11 ***
+Using the `Run Id` from here, we can now test the model from the notebook by running:
+```python
+import mlflow
+logged_model = 'runs:/<RUN_ID>/<ARTIFACT_PATH>'
+loaded_model = mlflow.pyfunc.load_model(logged_model) # Load model as a PyFuncModel.
+loaded_model.predict(["Hello I don't know what to do"])
+```
+Note that in the `predict()` method you’ll have to send the data exactly as you would, from the Model Inference Endpoint.
 
-Encrypted cleaned new dataset
+We will go on to Register the model now by clicking the `Register Model` Button above.
+From here you can select a new model to register, or register a new version of an old model.
 
-*** Release notes for version: 12 ***
+### Host the model to use for inference
+Now, go to the registered model screen:
+<img width="1692" alt="Screenshot 2023-06-27 at 6 41 27 PM" src="https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/assets/9202014/8916d9f8-d922-42d6-8620-215d3dfc9d82">
 
-Changing Column Names
+From here, click on `Use Model for Inference` button where you can select a new endpoint or update the configuration (Model Version etc.) on an older one.
+<img width="1515" alt="Screenshot 2023-06-27 at 6 43 37 PM" src="https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/assets/9202014/1d0fb8bc-221b-49f8-9bcf-ebc3093ae538">
 
-*** Release notes for version: 13 ***
+Here you can explore the model serving configurations etc. including the number of concurrent requests that the servigng model can handle, etc.
+Note that you can also find the URL for the hosted model here.
 
-Clean up
 
-*** Release notes for version: 14 ***
+### Using the Model on Spark Side
 
-Fixed schema issue and named pipelines correctly
+For our use case, we defined a UDF to get the predicted output:
 
-*** Release notes for version: 15 ***
+```python
+@udf(returnType=
+        ArrayType(
+            StructType([
+                StructField("entity", StringType(), True),
+                StructField("score", DoubleType(), True),
+                StructField("word", StringType(), True),
+                StructField("start", IntegerType(), True),
+                StructField("end", IntegerType(), True),
+            ]), 
+        True)
+    )
+def get_model_response_single_with_schema(message:str) -> dict:
+    url = 'https://dbc-19bbe7b0-ce18.cloud.databricks.com/serving-endpoints/test-pii-model/invocations'
+    headers = {'Authorization': f'Bearer {Config.databricks_token}', 'Content-Type': 'application/json'}
+    data_json = json.dumps({'inputs':[message]})
+    response = requests.request(method='POST', headers=headers, url=url, data=data_json)
+    if response.status_code != 200:
+        raise Exception(f'Request failed with status {response.status_code}, {response.text}')
+    return response.json().get('predictions')[0]
+```
 
-Lots of changes.
+Further, we called this function in a Reformat component in our pipeline (Visual Language: `sql`):
 
-*** Release notes for version: 16 ***
+```python
+get_model_response_single_with_schema(input_data)
+```
+where input_data is the name of the column whose entity data needs to be fetched.
 
-No idea... I'm drunk.
-
-*** Release notes for version: 17 ***
-
-Final Cleanup of Pipeline
-
-*** Release notes for version: 17.1 ***
-
-Fixing Update issue
-
-*** Release notes for version: 18 ***
-
-Fixing Drop Column from `SchemaTransform` Gem
-
-*** Release notes for version: 19 ***
-
-Updating
-
-*** Release notes for version: 1.0 ***
-
-Initial Release
