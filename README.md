@@ -13,7 +13,7 @@ As prerequisite, for above code to run correctly, the user needs to set up Datab
 The following configuration variables are required to set up for the demo project to run correctly:
 - Pipeline Level Configurations:
   - `encryptionKey` (databricks-secret) : The encryptionKey used by the vendor to encrypt their data. (We are using the Cryptography Fernet module. in `python` for the same)
-  - `databricks_token` (databricks-secret) : The databricks token of the user (needed to access the Model hosted on Databricks MLFlow. More details on hosting the model given [here](https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/pii_template/Readme.md)
+  - `databricks_token` (databricks-secret) : The databricks token of the user (needed to access the Model hosted on Databricks MLFlow. More details on hosting the model given [here](https://github.com/SimpleDataLabsInc/dais2023_automating_sensitive_data_detection/tree/main/pii_template)
   - `mask_character` (string) : Character with which PII data would be replaced
 - Subgraph Level Configurations to overwrite:
   - `mask_pii` Subgraph:
